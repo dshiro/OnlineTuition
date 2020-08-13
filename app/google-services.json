@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "111877892210",
+    "firebase_url": "https://onlinetuition-test.firebaseio.com",
+    "project_id": "onlinetuition-test",
+    "storage_bucket": "onlinetuition-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111877892210:android:994b17b96734f04fecfaeb",
+        "android_client_info": {
+          "package_name": "com.example.onlinetuition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111877892210-n13ci0vo4hiqugo34bbvdt8vs6iclmde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBCOJW7nJJZfppYiHOe99ZoutnqcujkDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111877892210-n13ci0vo4hiqugo34bbvdt8vs6iclmde.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
