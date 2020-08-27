@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.onlinetuition.databinding.FragmentTabCourseBinding
+import com.example.onlinetuition.databinding.FragmentTabStudentBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -38,7 +41,8 @@ class tabStudent : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(R.layout.fragment_tab_student, container, false)
+        val fragmentTabStudentBinding =  DataBindingUtil.inflate<FragmentTabStudentBinding>(inflater, R.layout.fragment_tab_student, container, false)
+        val view = fragmentTabStudentBinding.root
 
         val firebaseDB = FirebaseDatabase.getInstance().reference.child("User").child("Student")
         firebaseDB.addValueEventListener(object : ValueEventListener {
@@ -57,7 +61,6 @@ class tabStudent : Fragment() {
                 val raceBangladesh = arrRace.count { it == "Bangladesh" }
                 val raceMyanmar = arrRace.count { it == "Myanmar" }
 
-
                 val barEntry = ArrayList<BarEntry>();
                 barEntry.add(BarEntry(0f, raceChinese.toFloat()));
                 barEntry.add(BarEntry(1f, raceMalay.toFloat()));
@@ -66,25 +69,40 @@ class tabStudent : Fragment() {
                 barEntry.add(BarEntry(4f, raceBangladesh.toFloat()));
                 barEntry.add(BarEntry(5f, raceMyanmar.toFloat()));
 
-                val barChart:BarChart = view.findViewById(R.id.bar_chart);
-                val barDataSet = BarDataSet(barEntry, "Race");
+                val barDataSet = BarDataSet(barEntry, "");
+                barDataSet.setDrawValues(false)
+                barDataSet.color = R.color.colorPrimary
                 val barData = BarData(barDataSet)
+
+                val barChart: BarChart = view.findViewById(R.id.bar_chart);
+                barChart.description.isEnabled = false
+                barChart.legend.isEnabled = false
+                barChart.setTouchEnabled(false)
                 barChart.data = barData;
                 barChart.invalidate()
-
-                val xAxisLabel: ArrayList<String> = ArrayList()
-                xAxisLabel.add("Chinese")
-                xAxisLabel.add("Malay")
-                xAxisLabel.add("India")
-                xAxisLabel.add("International")
-                xAxisLabel.add("Bangladesh")
-                xAxisLabel.add("Myanmar")
 
                 val xAxis = barChart.xAxis
                 xAxis.position = XAxis.XAxisPosition.BOTTOM
                 xAxis.setDrawGridLines(false)
-                //TODO - add label handler
-                //TODO - list view
+
+                val leftAxis = barChart.axisLeft
+                val rightAxis = barChart.axisRight
+                leftAxis.setDrawAxisLine(true)
+                leftAxis.setDrawGridLines(true)
+                leftAxis.axisMinimum = 0f;
+                rightAxis.setDrawAxisLine(true)
+                rightAxis.setDrawGridLines(true)
+                rightAxis.axisMinimum = 0f;
+
+                fragmentTabStudentBinding.raceData =
+                    RaceData(
+                        "1", "11",
+                        "2", "22",
+                        "3", "33",
+                        "4", "44",
+                        "5", "55",
+                        "6", "66"
+                    );
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })

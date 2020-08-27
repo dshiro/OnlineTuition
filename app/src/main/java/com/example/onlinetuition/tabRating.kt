@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.example.onlinetuition.databinding.FragmentTabRatingBinding
+import com.example.onlinetuition.databinding.FragmentTabStudentBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -35,8 +38,9 @@ class tabRating : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_tab_student, container, false)
+
+        val fragmentTabRatingBinding =  DataBindingUtil.inflate<FragmentTabRatingBinding>(inflater, R.layout.fragment_tab_rating, container, false)
+        val view = fragmentTabRatingBinding.root
 
         val firebaseDB = FirebaseDatabase.getInstance().reference.child("User").child("Student")
         firebaseDB.addValueEventListener(object : ValueEventListener {
@@ -55,30 +59,46 @@ class tabRating : Fragment() {
                 val rate5 = arrRating.count { it == "5" }
 
                 val barEntry = ArrayList<BarEntry>();
-                barEntry.add(BarEntry(0f, rate1.toFloat()));
-                barEntry.add(BarEntry(1f, rate2.toFloat()));
-                barEntry.add(BarEntry(2f, rate3.toFloat()));
-                barEntry.add(BarEntry(3f, rate4.toFloat()));
-                barEntry.add(BarEntry(4f, rate5.toFloat()));
+                barEntry.add(BarEntry(0f, 0f));
+                barEntry.add(BarEntry(1f, rate1.toFloat()));
+                barEntry.add(BarEntry(2f, rate2.toFloat()));
+                barEntry.add(BarEntry(3f, rate3.toFloat()));
+                barEntry.add(BarEntry(4f, rate4.toFloat()));
+                barEntry.add(BarEntry(5f, rate5.toFloat()));
+
+                val barDataSet = BarDataSet(barEntry, "");
+                barDataSet.setDrawValues(false)
+                barDataSet.color = R.color.colorPrimary
+                val barData = BarData(barDataSet)
 
                 val barChart: BarChart = view.findViewById(R.id.bar_chart);
-                val barDataSet = BarDataSet(barEntry, "Rating");
-                val barData = BarData(barDataSet)
+                barChart.description.isEnabled = false
+                barChart.legend.isEnabled = false
+                barChart.setTouchEnabled(false)
                 barChart.data = barData;
                 barChart.invalidate()
-
-                val xAxisLabel: ArrayList<String> = ArrayList()
-                xAxisLabel.add("1")
-                xAxisLabel.add("2")
-                xAxisLabel.add("3")
-                xAxisLabel.add("4")
-                xAxisLabel.add("5")
 
                 val xAxis = barChart.xAxis
                 xAxis.position = XAxis.XAxisPosition.BOTTOM
                 xAxis.setDrawGridLines(false)
-                //TODO - add label handler
-                //TODO - list view
+
+                val leftAxis = barChart.axisLeft
+                val rightAxis = barChart.axisRight
+                leftAxis.setDrawAxisLine(true)
+                leftAxis.setDrawGridLines(true)
+                leftAxis.axisMinimum = 0f;
+                rightAxis.setDrawAxisLine(true)
+                rightAxis.setDrawGridLines(true)
+                rightAxis.axisMinimum = 0f;
+
+                fragmentTabRatingBinding.ratingData =
+                    RatingData(
+                        "1", "11",
+                        "2", "22",
+                        "3", "33",
+                        "4", "44",
+                        "5", "55"
+                    );
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
