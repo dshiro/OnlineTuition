@@ -51,6 +51,7 @@ class tabCourse : Fragment() {
                     arrCourse.add(postSnapshot.child("course").value.toString())
                 }
 
+                val total:Double = dataSnapshot.childrenCount.toDouble()
                 val courseIT = arrCourse.count {it == "IT"}
                 val courseAccount = arrCourse.count {it == "Account"}
                 val courseBusiness = arrCourse.count {it == "Business"}
@@ -59,6 +60,15 @@ class tabCourse : Fragment() {
                 val courseMathematics = arrCourse.count {it == "Mathematics"}
                 val courseMultimedia = arrCourse.count {it == "Multimedia"}
                 val courseScience = arrCourse.count {it == "Science"}
+
+                val courseIT_per = String.format("%.2f", (courseIT / total) * 100) + "%"
+                val courseAccount_per = String.format("%.2f", (courseAccount / total) * 100) + "%"
+                val courseBusiness_per = String.format("%.2f", (courseBusiness / total) * 100) + "%"
+                val courseElectronic_per = String.format("%.2f", (courseElectronic / total) * 100) + "%"
+                val courseGeography_per = String.format("%.2f", (courseGeography / total) * 100) + "%"
+                val courseMathematics_per = String.format("%.2f", (courseMathematics / total) * 100) + "%"
+                val courseMultimedia_per = String.format("%.2f", (courseMultimedia / total) * 100) + "%"
+                val courseScience_per = String.format("%.2f", (courseScience / total) * 100) + "%"
 
                 val barEntry = ArrayList<BarEntry>();
                 barEntry.add(BarEntry(0f, courseIT.toFloat()));
@@ -97,15 +107,16 @@ class tabCourse : Fragment() {
 
                 fragmentTabCourseBinding.courseData =
                     CourseData(
-                        "1", "11",
-                        "2", "22",
-                        "3", "33",
-                        "4", "44",
-                        "5", "55",
-                        "6", "66",
-                        "7", "77",
-                        "8", "88"
+                        courseIT.toString(), courseIT_per,
+                        courseAccount.toString(), courseAccount_per,
+                        courseBusiness.toString(), courseBusiness_per,
+                        courseElectronic.toString(), courseElectronic_per,
+                        courseGeography.toString(), courseGeography_per,
+                        courseMathematics.toString(), courseMathematics_per,
+                        courseMultimedia.toString(), courseMultimedia_per,
+                        courseScience.toString(), courseScience_per
                     );
+
 
             }
             override fun onCancelled(databaseError: DatabaseError) {}
