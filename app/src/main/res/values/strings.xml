@@ -6,6 +6,28 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="multiple_txt">Select Subject (Multiple)</string>
+    <string name="table_header_1">TITLE</string>
+    <string name="table_header_2">AMOUNT</string>
+    <string name="table_header_3">PERCENTAGE</string>
+    <string name="course_title1">0 - IT</string>
+    <string name="course_title2">1 - Business</string>
+    <string name="course_title3">2 - Electronic</string>
+    <string name="course_title4">3 - Account</string>
+    <string name="course_title5">4 - Mathematics</string>
+    <string name="course_title6">5 - Multimedia</string>
+    <string name="course_title7">6 - Science</string>
+    <string name="course_title8">7 - Geography</string>
+    <string name="race_title1">0 - International</string>
+    <string name="race_title2">1 - Malay</string>
+    <string name="race_title3">2 - Indian</string>
+    <string name="race_title4">3 - Chinese</string>
+    <string name="race_title5">4 - Bangladesh</string>
+    <string name="race_title6">5 - Myanmar</string>
+    <string name="rating_title5">5 - ★★★★★</string>
+    <string name="rating_title4">4 - ★★★★</string>
+    <string name="rating_title3">3 - ★★★</string>
+    <string name="rating_title2">2 - ★★</string>
+    <string name="rating_title1">1 - ★</string>
 
     <string-array name="subject_item">
         <item>Accounting</item>
