@@ -38,7 +38,7 @@ class tabRating : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_tab_student, container, false)
 
-        val firebaseDB = FirebaseDatabase.getInstance().reference.child("User")
+        val firebaseDB = FirebaseDatabase.getInstance().reference.child("User").child("Student")
         firebaseDB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var arrRating = ArrayList<String>()
