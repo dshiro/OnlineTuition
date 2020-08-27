@@ -40,7 +40,7 @@ class tabStudent : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_tab_student, container, false)
 
-        val firebaseDB = FirebaseDatabase.getInstance().reference.child("User")
+        val firebaseDB = FirebaseDatabase.getInstance().reference.child("User").child("Student")
         firebaseDB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var arrRace = ArrayList<String>()
