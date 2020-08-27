@@ -6,6 +6,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="multiple_txt">Select Subject (Multiple)</string>
+    <string name="button_payment">Payment</string>
+    <string name="box_one_payment">Payment</string>
 
     <string-array name="subject_item">
         <item>Accounting</item>
