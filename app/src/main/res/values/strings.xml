@@ -1,7 +1,22 @@
 <resources>
     <string name="app_name">OnlineTuition</string>
     <string name="button_statistics">Statistics</string>
+    <string name="button_SelectCourse">Select Course</string>
     <string name="navigate_title">Home Page</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="multiple_txt">Select Subject (Multiple)</string>
+
+    <string-array name="subject_item">
+        <item>Accounting</item>
+        <item>Business</item>
+        <item>Chinese</item>
+        <item>English</item>
+        <item>Geography</item>
+        <item>IT</item>
+        <item>Malay</item>
+        <item>Mathematics</item>
+        <item>Science</item>
+        <item>Sejarah</item>
+    </string-array>
 </resources>
