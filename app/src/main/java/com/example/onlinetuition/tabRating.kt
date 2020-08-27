@@ -52,11 +52,18 @@ class tabRating : Fragment() {
                     arrRating.add(postSnapshot.child("rating").value.toString())
                 }
 
+                val total:Double = dataSnapshot.childrenCount.toDouble()
                 val rate1 = arrRating.count { it == "1" }
                 val rate2 = arrRating.count { it == "2" }
                 val rate3 = arrRating.count { it == "3" }
                 val rate4 = arrRating.count { it == "4" }
                 val rate5 = arrRating.count { it == "5" }
+
+                val rate1_per = String.format("%.2f", (rate1 / total) * 100) + "%"
+                val rate2_per = String.format("%.2f", (rate2 / total) * 100) + "%"
+                val rate3_per = String.format("%.2f", (rate3 / total) * 100) + "%"
+                val rate4_per = String.format("%.2f", (rate4 / total) * 100) + "%"
+                val rate5_per = String.format("%.2f", (rate5 / total) * 100) + "%"
 
                 val barEntry = ArrayList<BarEntry>();
                 barEntry.add(BarEntry(0f, 0f));
@@ -93,11 +100,11 @@ class tabRating : Fragment() {
 
                 fragmentTabRatingBinding.ratingData =
                     RatingData(
-                        "1", "11",
-                        "2", "22",
-                        "3", "33",
-                        "4", "44",
-                        "5", "55"
+                        rate1.toString(), rate1_per,
+                        rate2.toString(), rate2_per,
+                        rate3.toString(), rate3_per,
+                        rate4.toString(), rate4_per,
+                        rate5.toString(), rate5_per
                     );
             }
             override fun onCancelled(databaseError: DatabaseError) {}

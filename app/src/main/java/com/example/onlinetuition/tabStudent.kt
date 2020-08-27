@@ -54,12 +54,20 @@ class tabStudent : Fragment() {
                     arrRace.add(postSnapshot.child("race").value.toString())
                 }
 
+                val total:Double = dataSnapshot.childrenCount.toDouble()
                 val raceChinese = arrRace.count { it == "Chinese" }
                 val raceIndia = arrRace.count { it == "Indian" }
                 val raceMalay = arrRace.count { it == "Malay" }
                 val raceInter = arrRace.count { it == "International" }
                 val raceBangladesh = arrRace.count { it == "Bangladesh" }
                 val raceMyanmar = arrRace.count { it == "Myanmar" }
+
+                val raceChinese_per = String.format("%.2f", (raceChinese / total) * 100) + "%"
+                val raceIndia_per = String.format("%.2f", (raceIndia / total) * 100) + "%"
+                val raceMalay_per = String.format("%.2f", (raceMalay / total) * 100) + "%"
+                val raceInter_per = String.format("%.2f", (raceInter / total) * 100) + "%"
+                val raceBangladesh_per = String.format("%.2f", (raceBangladesh / total) * 100) + "%"
+                val raceMyanmar_per = String.format("%.2f", (raceMyanmar / total) * 100) + "%"
 
                 val barEntry = ArrayList<BarEntry>();
                 barEntry.add(BarEntry(0f, raceChinese.toFloat()));
@@ -96,13 +104,14 @@ class tabStudent : Fragment() {
 
                 fragmentTabStudentBinding.raceData =
                     RaceData(
-                        "1", "11",
-                        "2", "22",
-                        "3", "33",
-                        "4", "44",
-                        "5", "55",
-                        "6", "66"
+                        raceChinese.toString(), raceChinese_per,
+                        raceMalay.toString(), raceMalay_per,
+                        raceIndia.toString(), raceIndia_per,
+                        raceInter.toString(), raceInter_per,
+                        raceBangladesh.toString(), raceBangladesh_per,
+                        raceMyanmar.toString(), raceMyanmar_per
                     );
+
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
