@@ -30,5 +30,14 @@ class MainActivity : AppCompatActivity() {
             //toStatistic.putExtra("name", "value")
             startActivity(toStatistic)
         }
+
+        val buttonSelectCourse = findViewById<Button>(R.id.button_course)
+        buttonSelectCourse.setOnClickListener{
+            val toCourse = Intent(this, CourseSelect::class.java)
+            startActivity(toCourse)
+        }
+
+
+
     }
 }
