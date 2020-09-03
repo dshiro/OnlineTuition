@@ -5,6 +5,10 @@
     <string name="navigate_title">Home Page</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="multiple_txt">Select Subject (Multiple)</string>
+  
+    <string name="button_payment">Payment</string>
+    <string name="box_one_payment">Payment</string>
+  
     <string name="table_header_1">TITLE</string>
     <string name="table_header_2">AMOUNT</string>
     <string name="table_header_3">PERCENTAGE</string>
@@ -40,4 +44,26 @@
         <item>Science</item>
         <item>Sejarah</item>
     </string-array>
+    <string name="title_activity_payment">Payment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="text_paymethod">Payment Method</string>
+    <string name="textview_master">Master Card</string>
+    <string name="textview_card">Credit / Debit Card</string>
+    <string name="img_debit_credit">Credit / Debit Card</string>
+    <string name="textview_bankin">Bank  in receipt</string>
+    <string name="img_file_upload">Bank in receipt</string>
+    <string name="image_receipt">Bank in receipt</string>
+    <string name="todo">TODO</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="image_button">Choose Image</string>
+    <string name="picture_receipt">Recipt</string>
+    <string name="text_price">Total: RM 200.00</string>
+    <string name="text_upload">Upload</string>
 </resources>
