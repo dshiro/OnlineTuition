@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.onlinetuition.databinding.FragmentTabCourseBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -36,8 +38,8 @@ class tabCourse : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
 
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_tab_course, container, false)
+        val fragmentTabCourseBinding =  DataBindingUtil.inflate<FragmentTabCourseBinding>(inflater, R.layout.fragment_tab_course, container, false)
+        val view = fragmentTabCourseBinding.root
 
         val firebaseDB = FirebaseDatabase.getInstance().reference.child("User").child("Student")
         firebaseDB.addValueEventListener(object : ValueEventListener {
@@ -49,6 +51,7 @@ class tabCourse : Fragment() {
                     arrCourse.add(postSnapshot.child("course").value.toString())
                 }
 
+                val total:Double = dataSnapshot.childrenCount.toDouble()
                 val courseIT = arrCourse.count {it == "IT"}
                 val courseAccount = arrCourse.count {it == "Account"}
                 val courseBusiness = arrCourse.count {it == "Business"}
@@ -57,6 +60,15 @@ class tabCourse : Fragment() {
                 val courseMathematics = arrCourse.count {it == "Mathematics"}
                 val courseMultimedia = arrCourse.count {it == "Multimedia"}
                 val courseScience = arrCourse.count {it == "Science"}
+
+                val courseIT_per = String.format("%.2f", (courseIT / total) * 100) + "%"
+                val courseAccount_per = String.format("%.2f", (courseAccount / total) * 100) + "%"
+                val courseBusiness_per = String.format("%.2f", (courseBusiness / total) * 100) + "%"
+                val courseElectronic_per = String.format("%.2f", (courseElectronic / total) * 100) + "%"
+                val courseGeography_per = String.format("%.2f", (courseGeography / total) * 100) + "%"
+                val courseMathematics_per = String.format("%.2f", (courseMathematics / total) * 100) + "%"
+                val courseMultimedia_per = String.format("%.2f", (courseMultimedia / total) * 100) + "%"
+                val courseScience_per = String.format("%.2f", (courseScience / total) * 100) + "%"
 
                 val barEntry = ArrayList<BarEntry>();
                 barEntry.add(BarEntry(0f, courseIT.toFloat()));
@@ -68,34 +80,50 @@ class tabCourse : Fragment() {
                 barEntry.add(BarEntry(6f, courseMultimedia.toFloat()));
                 barEntry.add(BarEntry(7f, courseScience.toFloat()));
 
-                val barChart: BarChart = view.findViewById(R.id.bar_chart);
-                val barDataSet = BarDataSet(barEntry, "Course");
+                val barDataSet = BarDataSet(barEntry, "");
+                barDataSet.setDrawValues(false)
+                barDataSet.color = R.color.colorPrimary
                 val barData = BarData(barDataSet)
+
+                val barChart: BarChart = view.findViewById(R.id.bar_chart);
+                barChart.description.isEnabled = false
+                barChart.legend.isEnabled = false
+                barChart.setTouchEnabled(false)
                 barChart.data = barData;
                 barChart.invalidate()
-
-                val xAxisLabel: ArrayList<String> = ArrayList()
-                xAxisLabel.add("IT")
-                xAxisLabel.add("Account")
-                xAxisLabel.add("Business")
-                xAxisLabel.add("Electronic")
-                xAxisLabel.add("Geography")
-                xAxisLabel.add("Mathematics")
-                xAxisLabel.add("Multimedia")
-                xAxisLabel.add("Science")
 
                 val xAxis = barChart.xAxis
                 xAxis.position = XAxis.XAxisPosition.BOTTOM
                 xAxis.setDrawGridLines(false)
-                //TODO - add label handler
-                //TODO - list view
+
+                val leftAxis = barChart.axisLeft
+                val rightAxis = barChart.axisRight
+                leftAxis.setDrawAxisLine(true)
+                leftAxis.setDrawGridLines(true)
+                leftAxis.axisMinimum = 0f;
+                rightAxis.setDrawAxisLine(true)
+                rightAxis.setDrawGridLines(true)
+                rightAxis.axisMinimum = 0f;
+
+                fragmentTabCourseBinding.courseData =
+                    CourseData(
+                        courseIT.toString(), courseIT_per,
+                        courseAccount.toString(), courseAccount_per,
+                        courseBusiness.toString(), courseBusiness_per,
+                        courseElectronic.toString(), courseElectronic_per,
+                        courseGeography.toString(), courseGeography_per,
+                        courseMathematics.toString(), courseMathematics_per,
+                        courseMultimedia.toString(), courseMultimedia_per,
+                        courseScience.toString(), courseScience_per
+                    );
+
+
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
 
         return view
     }
-
 
     companion object {
         @JvmStatic
