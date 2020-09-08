@@ -1,10 +1,10 @@
 package com.example.onlinetuition;
 
 public class RatingData {
-    public String amount1, percentage1, amount2, percentage2,
-            amount3, percentage3, amount4, percentage4, amount5, percentage5;
+    public String amount1, percentage1, amount2, percentage2, amount3, percentage3,
+            amount4, percentage4, amount5, percentage5, amount0, percentage0;
 
-    public RatingData(String amount1, String percentage1, String amount2, String percentage2, String amount3, String percentage3, String amount4, String percentage4, String amount5, String percentage5) {
+    public RatingData(String amount1, String percentage1, String amount2, String percentage2, String amount3, String percentage3, String amount4, String percentage4, String amount5, String percentage5, String amount0, String percentage0) {
         this.amount1 = amount1;
         this.percentage1 = percentage1;
         this.amount2 = amount2;
@@ -15,6 +15,8 @@ public class RatingData {
         this.percentage4 = percentage4;
         this.amount5 = amount5;
         this.percentage5 = percentage5;
+        this.amount0 = amount0;
+        this.percentage0 = percentage0;
     }
 
     public String getAmount1() {
@@ -95,5 +97,21 @@ public class RatingData {
 
     public void setPercentage5(String percentage5) {
         this.percentage5 = percentage5;
+    }
+
+    public String getAmount0() {
+        return amount0;
+    }
+
+    public void setAmount0(String amount0) {
+        this.amount0 = amount0;
+    }
+
+    public String getPercentage0() {
+        return percentage0;
+    }
+
+    public void setPercentage0(String percentage0) {
+        this.percentage0 = percentage0;
     }
 }

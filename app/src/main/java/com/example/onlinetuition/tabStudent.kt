@@ -54,7 +54,7 @@ class tabStudent : Fragment() {
                     arrRace.add(postSnapshot.child("race").value.toString())
                 }
 
-                val total:Double = dataSnapshot.childrenCount.toDouble()
+                val total:Double = arrRace.count().toDouble()
                 val raceChinese = arrRace.count { it == "Chinese" }
                 val raceIndia = arrRace.count { it == "Indian" }
                 val raceMalay = arrRace.count { it == "Malay" }
