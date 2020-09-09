@@ -66,4 +66,13 @@
     <string name="picture_receipt">Recipt</string>
     <string name="text_price">Total: RM 200.00</string>
     <string name="text_upload">Upload</string>
+    <string name="textViewCD">Debit/Credit Card</string>
+    <string name="textViewCardNumber">Card Number</string>
+    <string name="textViewExpiration">Expiration</string>
+    <string name="textViewName">Name</string>
+    <string name="textViewCCV">CCV</string>
+    <string name="StringCardNumberHint">1111 1111 1111 1111</string>
+    <string name="StringExpiration">15/20</string>
+    <string name="StringCCV">123</string>
+    <string name="btnPay">Pay</string>
 </resources>
