@@ -16,18 +16,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".DebitCreditForm"/>
 
-        <activity android:name=".BankIn" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-         </activity>
-
-        <activity
-            android:name=".Payment"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".CourseSelect" />
-        <activity android:name=".StatisticMain" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BankIn" >
+         </activity>
+
+        <activity
+            android:name=".Payment"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".CourseSelect" />
+        <activity android:name=".StatisticMain" />
 
         <meta-data
             android:name="preloaded_fonts"
