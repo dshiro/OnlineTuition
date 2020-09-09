@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_bank_in.*
 import java.io.IOException
 
@@ -101,7 +102,7 @@ import java.io.IOException
                 resultCode == Activity.RESULT_OK &&
                 data != null && data.data != null)
         {
-            if(data?.getData()!= null){
+            if(data?.data!= null){
               val selectImage: Uri? = data.data
                 Log.i("selectImage", "onActivityResult: file path : " + selectImage);
             }
@@ -124,13 +125,17 @@ import java.io.IOException
             progressDialog.setTitle("Uploading..")
             progressDialog.show()*/
 
-            val imageRef = storageReference!!.child(("images/testing"))
+            val imageRef = storageReference!!.child(("images/testing2"))
+
+            Log.i("selectImage", "imageRef" + imageRef.toString());
             imageRef.putFile(filePath!!)
+
                 .addOnSuccessListener {
        /*             progressDialog.dismiss()*/
                     Toast.makeText(applicationContext,"File Uploaded", Toast.LENGTH_SHORT).show()
                 }
                  .addOnFailureListener {
+
 
                      /*  progressDialog.dismiss()*/
                      Log.i("selectImage", "Upload Failed");
@@ -145,8 +150,8 @@ import java.io.IOException
 
     private fun showFileChoose() {
         val intent = Intent()
-        intent.type="image/*"
-        intent.action= Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(Intent.createChooser(intent,"Select Picture"),PICK_IMAGE_REQUEST)
 
     }

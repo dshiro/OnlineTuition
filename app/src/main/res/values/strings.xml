@@ -66,4 +66,5 @@
     <string name="picture_receipt">Recipt</string>
     <string name="text_price">Total: RM 200.00</string>
     <string name="text_upload">Upload</string>
+    <string name="rating_title6">0 - Unrated</string>
 </resources>
