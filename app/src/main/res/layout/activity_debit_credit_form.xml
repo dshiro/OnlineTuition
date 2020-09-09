@@ -7,5 +7,134 @@
     tools:context=".DebitCreditForm">
 
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="343dp"
+        android:layout_marginBottom="455dp"
+        android:contentDescription="@string/img_debit_credit"
+        app:srcCompat="@drawable/ic_credit_debit_card"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textViewDebitCredit"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="656dp"
+        android:background="#00BCD4"
+        android:gravity="center_vertical"
+        android:text="@string/textViewCD"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextNumberCard"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="247dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/textViewCardNumber" />
+
+    <EditText
+        android:id="@+id/editTextNumberCard"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="452dp"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="19"
+        android:autofillHints="Card Number"
+        android:hint="@string/StringCardNumberHint" />
+
+    <TextView
+        android:id="@+id/textViewExpiration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextDate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/textViewExpiration" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextTextPersonName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="295dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/textViewName" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="559dp"
+        android:autofillHints="Name"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:labelFor="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="349dp"
+        android:ems="10"
+        android:inputType="date"
+        android:autofillHints="Month/Year"
+        android:maxLength="5"
+        android:hint="@string/StringExpiration"/>
+
+    <TextView
+        android:id="@+id/textViewCCV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextNumberCCV"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/textViewCCV" />
+
+    <EditText
+        android:id="@+id/editTextNumberCCV"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="348dp"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:autofillHints="CCV"
+        android:maxLength="3"
+        android:hint="@string/StringCCV" />
+
+    <Button
+        android:id="@+id/buttonPay"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="@string/btnPay" />
 
 </RelativeLayout>

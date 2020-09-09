@@ -3,9 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
+
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.0"
+    buildToolsVersion "30.0.1"
 
     defaultConfig {
         applicationId "com.example.onlinetuition"
@@ -79,4 +80,8 @@ android {
 
     }
 
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-database:19.3.1'
 }

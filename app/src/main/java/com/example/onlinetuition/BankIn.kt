@@ -1,6 +1,7 @@
 package com.example.onlinetuition
 
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -88,7 +89,7 @@ import java.io.IOException
     }*/
 
 
-/////////////////////////////////////////////////////////////////////////////second function//////////////////////
+/////////////////////////////////////////////////////////////////////////////second version//////////////////////
     override fun onClick(p0: View) {
        if(p0 === imageButton)
            showFileChoose()
@@ -104,7 +105,7 @@ import java.io.IOException
         {
             if(data?.data!= null){
               val selectImage: Uri? = data.data
-                Log.i("selectImage", "onActivityResult: file path : " + selectImage);
+                Log.i("selectImage", "onActivityResult: file path : $selectImage");
             }
 
             filePath = data.data;
@@ -121,23 +122,23 @@ import java.io.IOException
     private fun uploadFile() {
         if(filePath != null)
         {
-/*            val progressDialog = ProgressDialog(this)
+            val progressDialog = ProgressDialog(this)
             progressDialog.setTitle("Uploading..")
-            progressDialog.show()*/
+            progressDialog.show()
 
             val imageRef = storageReference!!.child(("images/testing2"))
 
-            Log.i("selectImage", "imageRef" + imageRef.toString());
+            Log.i("selectImage", "imageRef$imageRef");
             imageRef.putFile(filePath!!)
 
                 .addOnSuccessListener {
-       /*             progressDialog.dismiss()*/
-                    Toast.makeText(applicationContext,"File Uploaded", Toast.LENGTH_SHORT).show()
+                    progressDialog.dismiss()
+                    Toast.makeText(applicationContext,"Picture Uploaded! Wait for verify", Toast.LENGTH_SHORT).show()
                 }
                  .addOnFailureListener {
 
 
-                     /*  progressDialog.dismiss()*/
+                       progressDialog.dismiss()
                      Log.i("selectImage", "Upload Failed");
 
                  }

@@ -20,5 +20,12 @@ class Payment : AppCompatActivity() {
             val toBankin = Intent(this, BankIn::class.java)
             startActivity(toBankin)
         }
+
+        val buttonCard = findViewById<Button>(R.id.buttonCard)
+        buttonCard.setOnClickListener {
+            val toCard = Intent(this, DebitCreditForm::class.java)
+            startActivity(toCard)
+        }
+
     }
 }
