@@ -18,7 +18,7 @@ class CourseSelect : AppCompatActivity(), AdapterView.OnItemClickListener {
     private var arrayAdapter: ArrayAdapter<String>? = null
     lateinit var ref: DatabaseReference
     lateinit var courseList: MutableList<Course>
-
+    lateinit var myList: List<String>
 /*    lateinit var listView: ListView*/
 
 
@@ -52,28 +52,34 @@ class CourseSelect : AppCompatActivity(), AdapterView.OnItemClickListener {
 
         confirmButton.setOnClickListener {
             saveCourse()
+
+
+
+
         }
 
 
     }
 
     private fun saveCourse() {
-        val name = listView?.selectedItem.toString()
-        val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
+/*        val name = list_view.selectedItemPosition.toString()*/
 
-        val course = Course(name)
 
-        ref.child("4").setValue(course)
+
+
+        val toPayment = Intent(this, Payment::class.java)
+        startActivity(toPayment)
 
 
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        var subject: String = parent?.getItemAtPosition(position) as String
-        Toast.makeText(
-            applicationContext,
-            "Subject Course : $subject",
-            Toast.LENGTH_SHORT
-        ).show()
+        val subject: String = parent?.getItemAtPosition(position) as String
+        val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
+        val course = Course(subject)
+
+        ref.child("4").setValue(course)
+
+
     }
 }
