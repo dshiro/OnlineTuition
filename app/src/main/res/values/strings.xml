@@ -34,14 +34,14 @@
     <string name="rating_title6">0 - Unrated</string>
 
     <string-array name="subject_item">
-        <item>Mathematics</item>
-        <item>Multimedia</item>
-        <item>Science</item>
-        <item>Geography</item>
-        <item>Electronic</item>
-        <item>Business</item>
-        <item>Account</item>
-        <item>IT</item>
+        <item>Mathematics (RM50)</item>
+        <item>Multimedia (RM60)</item>
+        <item>Science (RM40)</item>
+        <item>Geography (RM40)</item>
+        <item>Electronic (RM50)</item>
+        <item>Business (RM60)</item>
+        <item>Account (RM60)</item>
+        <item>IT (RM60)</item>
     </string-array>
     <string name="confirmButton">Confirm</string>
     <string name="title_activity_payment">Payment</string>
