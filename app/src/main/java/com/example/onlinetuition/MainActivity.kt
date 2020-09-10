@@ -32,5 +32,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(toPayment)
         }
 
+        val buttonClassroom = findViewById<Button>(R.id.button_classroom)
+        buttonClassroom.setOnClickListener{
+            val toClass = Intent(this, ClassList::class.java)
+            startActivity(toClass)
+        }
     }
 }
