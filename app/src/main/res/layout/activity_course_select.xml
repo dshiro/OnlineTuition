@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,29 +7,63 @@
     android:layout_height="match_parent"
     tools:context=".CourseSelect">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_select_course"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/confirmButtonHeight"
+        android:background="@color/ConfirmColour"
+        android:text="@string/confirmButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/multiple_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/multiple_margin_top"
         android:paddingStart="@dimen/text_padding"
         android:paddingEnd="@dimen/text_padding"
         android:text="@string/multiple_txt"
-        android:textSize="@dimen/multiple_text_size" />
+        android:textSize="@dimen/multiple_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_select_course" />
 
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/list_view_margin_top" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/confirmButton"
+        app:layout_constraintTop_toBottomOf="@+id/multiple_txt"
+        tools:layout_editor_absoluteX="1dp" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiple_txt" />
+
+    <!--    <CheckedTextView
+            android:id="@+id/checkedTextView"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multiple_txt"
+            android:checked="false"/>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
