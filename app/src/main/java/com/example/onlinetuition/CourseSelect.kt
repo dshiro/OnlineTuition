@@ -78,7 +78,7 @@ class CourseSelect : AppCompatActivity(), AdapterView.OnItemClickListener {
         val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
         val course = Course(subject)
 
-        ref.child("4").setValue(course)
+        ref.child("5").setValue(course)
 
 
     }
