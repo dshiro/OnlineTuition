@@ -8,12 +8,49 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:111877892210:android:d27ad4d2ad3a80b1ecfaeb",
+        "android_client_info": {
+          "package_name": "com.example.iot_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111877892210-n13ci0vo4hiqugo34bbvdt8vs6iclmde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBCOJW7nJJZfppYiHOe99ZoutnqcujkDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111877892210-n13ci0vo4hiqugo34bbvdt8vs6iclmde.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:111877892210:android:994b17b96734f04fecfaeb",
         "android_client_info": {
           "package_name": "com.example.onlinetuition"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "111877892210-mfupio0ds4rdha6cfirontsvfitfl01v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlinetuition",
+            "certificate_hash": "f5f9dbe2d34a0f73950265e6717437efa2460e17"
+          }
+        },
         {
           "client_id": "111877892210-8k0n429mtsb3u5tpl3apsh9skq8kbojc.apps.googleusercontent.com",
           "client_type": 1,

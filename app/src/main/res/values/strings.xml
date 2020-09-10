@@ -5,10 +5,10 @@
     <string name="navigate_title">Home Page</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="multiple_txt">Select Subject (Multiple)</string>
-  
+
     <string name="button_payment">Payment</string>
     <string name="box_one_payment">Payment</string>
-  
+
     <string name="table_header_1">TITLE</string>
     <string name="table_header_2">AMOUNT</string>
     <string name="table_header_3">PERCENTAGE</string>
@@ -45,6 +45,29 @@
         <item>Science</item>
         <item>Sejarah</item>
     </string-array>
+
+    <string-array name="class_item">
+        <item>Accounting</item>
+        <item>Business</item>
+        <item>Multimedia</item>
+        <item>Geography</item>
+        <item>IT</item>
+        <item>Electronic</item>
+        <item>Mathematics</item>
+        <item>Science</item>
+    </string-array>
+
+    <string-array name="homework_item">
+        <item>Practical 1</item>
+        <item>Practical 2</item>
+        <item>Practical 3</item>
+        <item>Tutorial 1</item>
+        <item>Tutorial 2</item>
+        <item>Tutorial 3</item>
+        <item>Assignment</item>
+    </string-array>
+
+
     <string name="title_activity_payment">Payment</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -67,7 +90,7 @@
     <string name="picture_receipt">Recipt</string>
     <string name="text_price">Total: RM 200.00</string>
     <string name="text_upload">Upload</string>
-  
+
     <string name="textViewCD">Debit/Credit Card</string>
     <string name="textViewCardNumber">Card Number</string>
     <string name="textViewExpiration">Expiration</string>
@@ -77,4 +100,8 @@
     <string name="StringExpiration">15/20</string>
     <string name="StringCCV">123</string>
     <string name="btnPay">Pay</string>
+    <string name="button_classroom">Classroom</string>
+    <string name="practical_1">Practical 1</string>
+    <string name="add_attachment">Add attachment</string>
+    <string name="button_submit">Submit</string>
 </resources>
