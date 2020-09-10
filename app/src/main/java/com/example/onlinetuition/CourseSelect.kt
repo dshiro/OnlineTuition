@@ -1,49 +1,85 @@
 package com.example.onlinetuition
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
+import androidx.databinding.DataBindingUtil
+import com.example.onlinetuition.databinding.FragmentTabCourseBinding
+import com.google.firebase.database.*
+
+import kotlinx.android.synthetic.main.activity_course_select.*
 
 class CourseSelect : AppCompatActivity(), AdapterView.OnItemClickListener {
 
+    private var listView: ListView? = null
+    private var arrayAdapter: ArrayAdapter<String>? = null
+    lateinit var ref: DatabaseReference
+    lateinit var courseList: MutableList<Course>
+    lateinit var myList: List<String>
+/*    lateinit var listView: ListView*/
 
-    private var listView:ListView ? = null
-    private var arrayAdapter:ArrayAdapter<String> ? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_course_select)
+        setSupportActionBar(findViewById(R.id.toolbar_select_course))
+        supportActionBar?.title = "Select Course"
 
         listView = findViewById(R.id.list_view)
-        arrayAdapter = ArrayAdapter(applicationContext, android.R.layout.simple_list_item_multiple_choice, resources.getStringArray(R.array.subject_item))
+        arrayAdapter = ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_list_item_multiple_choice,
+            resources.getStringArray(R.array.subject_item)
+        )
 
         listView?.adapter = arrayAdapter
         listView?.choiceMode = ListView.CHOICE_MODE_MULTIPLE
         listView?.onItemClickListener = this
 
+/*    courseList = mutableListOf()
+    ref = FirebaseDatabase.getInstance().getReference("Course")
+    listView = findViewById(R.id.list_view)
+
+
+    val adapter = CourseAdapter(applicationContext, R.layout.activity_course_select, courseList)
+    listView.adapter = adapter*/
+
+
+        val confirmButton = findViewById<Button>(R.id.confirmButton)
+
+        confirmButton.setOnClickListener {
+            saveCourse()
+
+
+
+
+        }
+
+
     }
 
-    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+    private fun saveCourse() {
+/*        val name = list_view.selectedItemPosition.toString()*/
 
-//        var items:String = p0?.getItemAtPosition(p2) as String
-//        Toast.makeText(applicationContext,
-//            "Subject Course : $items",
-//            Toast.LENGTH_SHORT).show()
+
+
+
+        val toPayment = Intent(this, Payment::class.java)
+        startActivity(toPayment)
 
 
     }
 
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val subject: String = parent?.getItemAtPosition(position) as String
+        val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
+        val course = Course(subject)
 
+        ref.child("4").setValue(course)
+
+
+    }
 }
-
-
-
-
-
-
-
-
