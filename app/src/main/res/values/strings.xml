@@ -100,8 +100,7 @@
     <string name="StringExpiration">15/20</string>
     <string name="StringCCV">123</string>
     <string name="btnPay">Pay</string>
-  
-    <string name="coursePrice">Each course is RM50</string>
+
     <string name="button_classroom">Classroom</string>
     <string name="practical_1">Practical 1</string>
     <string name="add_attachment">Add attachment</string>

@@ -31,8 +31,11 @@
         android:id="@+id/multiple_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:paddingStart="@dimen/text_padding"
+        android:paddingTop="15dp"
         android:paddingEnd="@dimen/text_padding"
+        android:paddingBottom="15dp"
         android:text="@string/multiple_txt"
         android:textSize="@dimen/multiple_text_size"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +44,13 @@
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/confirmButton"
         app:layout_constraintTop_toBottomOf="@+id/multiple_txt"
-        tools:layout_editor_absoluteX="1dp" >
+        tools:layout_editor_absoluteX="1dp">
 
     </ListView>
 
