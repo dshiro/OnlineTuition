@@ -1,15 +1,18 @@
 package com.example.onlinetuition
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.util.SparseBooleanArray
 import android.view.View
+import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.ColorUtils
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -18,7 +21,6 @@ class CourseSelect : AppCompatActivity() {
 
     lateinit var listView: ListView
     private var arrayAdapter: ArrayAdapter<String>? = null
-    private var subject: String? = null
     var courseList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +30,18 @@ class CourseSelect : AppCompatActivity() {
         supportActionBar?.title = "Select Course (Multiple)"
 
         listView = findViewById(R.id.list_view)
-        arrayAdapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_list_item_multiple_choice,
-            resources.getStringArray(R.array.subject_item)
-        )
+        arrayAdapter = object: ArrayAdapter<String>(applicationContext, android.R.layout.simple_list_item_multiple_choice, resources.getStringArray(R.array.subject_item)){
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = super.getView(position, convertView, parent)
+                if (position %2 == 0){
+                    view.setBackgroundColor(Color.parseColor("#00FFFF"))
+                }else{
+                    view.setBackgroundColor(Color.WHITE)
+                }
+
+                return view
+            }
+        }
 
         listView.adapter = arrayAdapter
         listView.choiceMode = ListView.CHOICE_MODE_MULTIPLE
@@ -55,17 +64,6 @@ class CourseSelect : AppCompatActivity() {
             }
         }
 
-/*        val checked: SparseBooleanArray = listView.getCheckedItemPositions()
-        val size = checked.size() // number of name-value pairs in the array
-
-
-        for (i in 0 until size) {
-            val key = checked.keyAt(i)
-            val value = checked[key]
-            if (value) doSomethingWithSelectedIndex(key)
-        }*/
-
-
     }
 
     private fun saveCourse() {
@@ -85,7 +83,6 @@ class CourseSelect : AppCompatActivity() {
         startActivity(toPayment)
 
     }
-
 
 }
 
