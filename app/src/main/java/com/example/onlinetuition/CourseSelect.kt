@@ -1,6 +1,7 @@
 package com.example.onlinetuition
 
 import android.os.Bundle
+import android.util.Log
 import android.util.SparseBooleanArray
 import android.view.View
 import android.widget.AdapterView
@@ -17,6 +18,7 @@ class CourseSelect : AppCompatActivity() {
     lateinit var listView: ListView
     private var arrayAdapter: ArrayAdapter<String>? = null
     private var subject: String? = null
+    var courseList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +44,17 @@ class CourseSelect : AppCompatActivity() {
 
 
         listView.setOnItemClickListener { p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long ->
-            subject += p0?.getItemAtPosition(p2) as String?
+            val clickedText = (p0?.getItemAtPosition(p2)).toString()
+            val isContain = courseList.any { it == clickedText }
 
-
+            if (isContain)
+            {
+                courseList.remove(clickedText)
+            }
+            else
+            {
+                courseList.add(clickedText)
+            }
         }
 
 /*        val checked: SparseBooleanArray = listView.getCheckedItemPositions()
@@ -63,8 +73,9 @@ class CourseSelect : AppCompatActivity() {
     }
 
     private fun saveCourse() {
+        val valuetoadd = courseList.distinct().joinToString(separator = ",")
         val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
-        val course = Course("$subject")
+        val course = Course(valuetoadd)
 
         ref.push().setValue(course)
 
