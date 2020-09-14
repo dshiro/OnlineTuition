@@ -4,7 +4,7 @@
     <string name="button_SelectCourse">Select Course</string>
     <string name="navigate_title">Home Page</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="multiple_txt">Select Subject (Multiple)</string>
+    <string name="multiple_txt">Each Course Is RM 50.00</string>
   
     <string name="button_payment">Payment</string>
     <string name="box_one_payment">Payment</string>
@@ -34,14 +34,14 @@
     <string name="rating_title6">0 - Unrated</string>
 
     <string-array name="subject_item">
-        <item>Mathematics (RM50)</item>
-        <item>Multimedia (RM60)</item>
-        <item>Science (RM40)</item>
-        <item>Geography (RM40)</item>
-        <item>Electronic (RM50)</item>
-        <item>Business (RM60)</item>
-        <item>Account (RM60)</item>
-        <item>IT (RM60)</item>
+        <item>Mathematics </item>
+        <item>Multimedia </item>
+        <item>Science </item>
+        <item>Geography </item>
+        <item>Electronic </item>
+        <item>Business </item>
+        <item>Account </item>
+        <item>IT </item>
     </string-array>
     <string name="confirmButton">Confirm</string>
     <string name="title_activity_payment">Payment</string>
@@ -76,4 +76,5 @@
     <string name="StringExpiration">15/20</string>
     <string name="StringCCV">123</string>
     <string name="btnPay">Pay</string>
+    <string name="coursePrice">Each course is RM50</string>
 </resources>
