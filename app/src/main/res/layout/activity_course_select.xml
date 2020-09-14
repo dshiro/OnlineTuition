@@ -44,26 +44,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/confirmButton"
         app:layout_constraintTop_toBottomOf="@+id/multiple_txt"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="1dp" >
 
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multiple_txt" />
+    </ListView>
 
-    <!--    <CheckedTextView
-            android:id="@+id/checkedTextView"
-            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/multiple_txt"
-            android:checked="false"/>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

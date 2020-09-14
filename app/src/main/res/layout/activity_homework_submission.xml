@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeworkSubmission">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_classroom"
@@ -22,10 +21,10 @@
         android:id="@+id/practical_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/multiple_margin_top"
+        android:layout_marginTop="70dp"
         android:paddingStart="@dimen/text_padding"
         android:paddingEnd="@dimen/text_padding"
-        android:text="@string/practical_1"
+        android:text="practical 1"
         android:textSize="@dimen/multiple_text_size" />
 
     <Button
@@ -34,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/add_attachment"
+        android:text="add attachment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
@@ -46,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        android:text="@string/button_submit" />
+        android:text="submit" />
 
 
 </RelativeLayout>
