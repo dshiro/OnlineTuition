@@ -1,5 +1,6 @@
 package com.example.onlinetuition
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.SparseBooleanArray
@@ -47,12 +48,9 @@ class CourseSelect : AppCompatActivity() {
             val clickedText = (p0?.getItemAtPosition(p2)).toString()
             val isContain = courseList.any { it == clickedText }
 
-            if (isContain)
-            {
+            if (isContain) {
                 courseList.remove(clickedText)
-            }
-            else
-            {
+            } else {
                 courseList.add(clickedText)
             }
         }
@@ -68,8 +66,6 @@ class CourseSelect : AppCompatActivity() {
         }*/
 
 
-
-
     }
 
     private fun saveCourse() {
@@ -79,14 +75,16 @@ class CourseSelect : AppCompatActivity() {
 
         ref.push().setValue(course)
 
-/*        val toPayment = Intent(this, Payment::class.java)
-intent.putExtra("Total Price",50)
-        startActivity(toPayment)*/
+
+        val checked: SparseBooleanArray = listView.checkedItemPositions
+        val size = checked.size()
+        val totalPrice = size * 50
+
+        val toPayment = Intent(this, Payment::class.java)
+        intent.putExtra("Total Price", totalPrice)
+        startActivity(toPayment)
 
     }
-
-
-
 
 
 }
