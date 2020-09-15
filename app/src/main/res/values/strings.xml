@@ -67,7 +67,7 @@
 
 
     <string name="confirmButton">Confirm</string>
-  
+
     <string name="title_activity_payment">Payment</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
