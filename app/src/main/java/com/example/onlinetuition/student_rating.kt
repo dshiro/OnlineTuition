@@ -33,6 +33,7 @@ class student_rating : AppCompatActivity() {
                 .child("rating")
 
             ref.setValue(ratingval)
+            Toast.makeText(applicationContext , "Submitted, Thanks!", Toast.LENGTH_LONG).show()
         }
     }
 }
