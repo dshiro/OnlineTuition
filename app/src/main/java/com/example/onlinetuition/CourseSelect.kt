@@ -52,7 +52,7 @@ class CourseSelect : AppCompatActivity() {
 
         val confirmButton = findViewById<Button>(R.id.confirmButton)
         confirmButton.setOnClickListener {
-            passTotalPrice()
+           /* passTotalPrice()*/
             saveCourse()
 
 
@@ -74,7 +74,7 @@ class CourseSelect : AppCompatActivity() {
 
     }
 
-    private fun saveCourse() {
+/*    private fun saveCourse() {
         val valuetoadd = courseList.distinct().joinToString(separator = ",")
         val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
         val course = Course(valuetoadd)
@@ -93,12 +93,27 @@ class CourseSelect : AppCompatActivity() {
         val totalPrice = size * 50
 
 
-        val toPayment = Intent(this, Payment::class.java)
+        val toPayment = Intent(this, BankIn::class.java)
         toPayment.putExtra("Total_Price", totalPrice.toString().toInt())
         startActivity(toPayment)
+    }*/
+
+    private fun saveCourse() {
+        val valuetoadd = courseList.distinct().joinToString(separator = ",")
+        val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
+        val course = Course(valuetoadd)
+
+        ref.push().setValue(course)
+
+
+        val checked: SparseBooleanArray = listView.checkedItemPositions
+        val size = checked.size()
+        val totalPrice = size * 50
+
+        val toPayment = Intent(this, Payment::class.java)
+        toPayment.putExtra("Total Price", totalPrice)
+        startActivity(toPayment)
     }
-
-
 
 }
 

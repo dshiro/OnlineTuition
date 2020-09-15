@@ -1,6 +1,6 @@
 package com.example.onlinetuition
 
-class CreditDebitCard(val paymentId: String?, val name:String, val cardNumber:String, val expiration:String, val ccv:String)
+class CreditDebitCard(val paymentId: String?, val name:String, val cardNumber:String, val expiration:String, val ccv:String, val totalPrice:String)
 
 /*
 class CreditDebitCard {

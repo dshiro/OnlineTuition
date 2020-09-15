@@ -97,7 +97,7 @@
     <string name="textViewName">Name</string>
     <string name="textViewCCV">CCV</string>
     <string name="StringCardNumberHint">1111 1111 1111 1111</string>
-    <string name="StringExpiration">15/20</string>
+    <string name="StringExpiration">12/20</string>
     <string name="StringCCV">123</string>
     <string name="btnPay">Pay</string>
 
