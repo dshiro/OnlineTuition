@@ -49,6 +49,12 @@ class MainActivity : AppCompatActivity() {
             val toClass = Intent(this, ClassList::class.java)
             startActivity(toClass)
         }
+
+        val buttonRating = findViewById<Button>(R.id.btnRating)
+        buttonRating.setOnClickListener{
+            val toRating = Intent(this, student_rating::class.java)
+            startActivity(toRating)
+        }
     }
     override fun onStart(){
         super.onStart()
