@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeworkSubmission"></activity>
+        <activity android:name=".student_rating"></activity>
+        <activity android:name=".HomeworkSubmission" />
         <activity android:name=".Homework" />
         <activity android:name=".ClassList" />
         <activity android:name=".DebitCreditForm" />

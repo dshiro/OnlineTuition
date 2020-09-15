@@ -67,7 +67,7 @@
 
 
     <string name="confirmButton">Confirm</string>
-  
+
     <string name="title_activity_payment">Payment</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -97,7 +97,7 @@
     <string name="textViewName">Name</string>
     <string name="textViewCCV">CCV</string>
     <string name="StringCardNumberHint">1111 1111 1111 1111</string>
-    <string name="StringExpiration">15/20</string>
+    <string name="StringExpiration">12/20</string>
     <string name="StringCCV">123</string>
     <string name="btnPay">Pay</string>
 
@@ -105,4 +105,7 @@
     <string name="practical_1">Practical 1</string>
     <string name="add_attachment">Add attachment</string>
     <string name="button_submit">Submit</string>
+    <string name="btn_rating_submit">Submit!</string>
+    <string name="btn_navito_rating">Rating</string>
+    <string name="textRatingTitle">Rate for this system</string>
 </resources>

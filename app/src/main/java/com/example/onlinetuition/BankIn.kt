@@ -1,5 +1,6 @@
 package com.example.onlinetuition
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
@@ -16,6 +17,7 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_bank_in.*
 import java.io.IOException
+import java.util.*
 
 /*class BankIn : AppCompatActivity(){*/
     class BankIn : AppCompatActivity(), View.OnClickListener {
@@ -27,12 +29,10 @@ import java.io.IOException
     internal var storage:FirebaseStorage?=null
     internal var storageReference:StorageReference?=null
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bank_in)
-
-
-
 
         //Init Firebase
         storage = FirebaseStorage.getInstance()
@@ -63,6 +63,16 @@ import java.io.IOException
                 pickImageFromGallery();
             }
         }*/
+
+        //get data from intent
+        val totalPrice = intent.getIntExtra("Total Price", 0)
+
+        //textview
+        val textView2 = findViewById<TextView>(R.id.textView2)
+
+        //setTextView
+        textView2.text = "Total Price: RM $totalPrice"
+
     }
 
 
@@ -126,11 +136,12 @@ import java.io.IOException
     private fun uploadFile() {
         if(filePath != null)
         {
+            val fileName = UUID.randomUUID().toString() +".jpg"
             val progressDialog = ProgressDialog(this)
             progressDialog.setTitle("Uploading..")
             progressDialog.show()
 
-            val imageRef = storageReference!!.child(("images/testing2"))
+            val imageRef = storageReference!!.child(("images/$fileName"))
 
             Log.i("selectImage", "imageRef$imageRef");
             imageRef.putFile(filePath!!)
