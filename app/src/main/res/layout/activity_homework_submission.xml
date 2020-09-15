@@ -13,39 +13,40 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="@drawable/abc_vector_test"
+        app:title="Submission"
         app:titleTextColor="#FFFFFF"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp" />
 
     <TextView
-        android:id="@+id/practical_1"
+        android:id="@+id/submission"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:layout_marginBottom="200dp"
         android:paddingStart="@dimen/text_padding"
         android:paddingEnd="@dimen/text_padding"
-        android:text="practical 1"
+        android:text="Practical 1"
+        android:textColor="#000000"
         android:textSize="@dimen/multiple_text_size" />
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnAddAttachment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerInParent="false"
         android:layout_centerHorizontal="true"
-        android:text="add attachment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:layout_marginTop="500dp"
+        android:text="add attachment" />
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="600dp"
         android:text="submit" />
+
 
 
 </RelativeLayout>

@@ -14,14 +14,24 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="@drawable/abc_vector_test"
+        app:title="Homework"
         app:titleTextColor="#FFFFFF"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp" />
 
-    <ListView
-        android:id="@+id/list_homework"
+    <TextView
+        android:id="@+id/homework"
         android:layout_width="match_parent"
-        android:layout_height="673dp"
-        android:layout_marginTop="@dimen/list_class" />
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="60dp"
+
+        android:layout_marginBottom="200dp"
+
+        android:paddingStart="@dimen/text_padding"
+        android:paddingEnd="@dimen/text_padding"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="@dimen/multiple_text_size" />
 
 </RelativeLayout>
