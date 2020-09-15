@@ -22,12 +22,16 @@ class CourseSelect : AppCompatActivity() {
     lateinit var listView: ListView
     private var arrayAdapter: ArrayAdapter<String>? = null
     var courseList = ArrayList<String>()
+    /*val userID = intent.getStringExtra()*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_course_select)
         setSupportActionBar(findViewById(R.id.toolbar_select_course))
         supportActionBar?.title = "Select Course (Multiple)"
+
+
+
 
         listView = findViewById(R.id.list_view)
         arrayAdapter = object: ArrayAdapter<String>(applicationContext, android.R.layout.simple_list_item_multiple_choice, resources.getStringArray(R.array.subject_item)){
@@ -38,7 +42,6 @@ class CourseSelect : AppCompatActivity() {
                 }else{
                     view.setBackgroundColor(Color.WHITE)
                 }
-
                 return view
             }
         }
@@ -49,7 +52,12 @@ class CourseSelect : AppCompatActivity() {
 
         val confirmButton = findViewById<Button>(R.id.confirmButton)
         confirmButton.setOnClickListener {
+            passTotalPrice()
             saveCourse()
+
+
+
+
         }
 
 
@@ -74,15 +82,23 @@ class CourseSelect : AppCompatActivity() {
         ref.push().setValue(course)
 
 
+
+
+
+    }
+
+    private fun passTotalPrice(){
         val checked: SparseBooleanArray = listView.checkedItemPositions
         val size = checked.size()
         val totalPrice = size * 50
 
-        val toPayment = Intent(this, Payment::class.java)
-        intent.putExtra("Total Price", totalPrice)
-        startActivity(toPayment)
 
+        val toPayment = Intent(this, Payment::class.java)
+        toPayment.putExtra("Total_Price", totalPrice.toString().toInt())
+        startActivity(toPayment)
     }
+
+
 
 }
 
