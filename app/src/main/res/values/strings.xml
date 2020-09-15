@@ -107,4 +107,5 @@
     <string name="button_submit">Submit</string>
     <string name="btn_rating_submit">Submit!</string>
     <string name="btn_navito_rating">Rating</string>
+    <string name="textRatingTitle">Rate for this system</string>
 </resources>
