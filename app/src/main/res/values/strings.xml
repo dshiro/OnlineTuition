@@ -67,7 +67,7 @@
 
 
     <string name="confirmButton">Confirm</string>
-  
+
     <string name="title_activity_payment">Payment</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -105,4 +105,6 @@
     <string name="practical_1">Practical 1</string>
     <string name="add_attachment">Add attachment</string>
     <string name="button_submit">Submit</string>
+    <string name="btn_rating_submit">Submit!</string>
+    <string name="btn_navito_rating">Rating</string>
 </resources>
