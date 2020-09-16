@@ -14,9 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".student_rating"></activity>
+      
+        <activity android:name=".HomeworkTeacher"></activity>
+        <activity android:name=".ClassTeacher" />
+        <activity android:name=".student_rating" />
+      
         <activity android:name=".Login" />
         <activity android:name=".Register" />
+      
         <activity android:name=".HomeworkSubmission" />
         <activity android:name=".Homework" />
         <activity android:name=".ClassList" />
