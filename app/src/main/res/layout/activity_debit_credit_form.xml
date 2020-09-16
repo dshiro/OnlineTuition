@@ -137,4 +137,16 @@
         android:layout_marginBottom="3dp"
         android:text="@string/btnPay" />
 
+    <TextView
+        android:id="@+id/textViewtotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_above="@+id/buttonPay"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="200dp"
+        android:textSize="24sp"/>
+
 </RelativeLayout>

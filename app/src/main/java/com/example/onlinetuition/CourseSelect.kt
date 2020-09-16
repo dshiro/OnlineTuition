@@ -84,7 +84,7 @@ class CourseSelect : AppCompatActivity() {
         val totalPrice = size * 50
 
         val toPayment = Intent(this, Payment::class.java)
-        toPayment.putExtra("Total Price", totalPrice.toString().toInt())
+        toPayment.putExtra("Total Price", totalPrice)
         startActivity(toPayment)
     }
 
