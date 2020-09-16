@@ -13,49 +13,46 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_class_list.*
 import kotlinx.android.synthetic.main.activity_class_list.list_class
-import kotlinx.android.synthetic.main.activity_homework.*
-import kotlinx.android.synthetic.main.activity_homework_submission.*
+import kotlinx.android.synthetic.main.activity_class_teacher.*
 import java.lang.StringBuilder
 
-class Homework : AppCompatActivity() {
+class ClassTeacher : AppCompatActivity() {
 
-    //private var listView: ListView? = null
-    //private var arrayAdapter: ArrayAdapter<String>? = null
-
+    private var listView: ListView? = null
+    private var arrayAdapter: ArrayAdapter<String>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_homework)
+        setContentView(R.layout.activity_class_teacher)
 
-
-        /*listView = findViewById(R.id.list_homework)
+        listView = findViewById(R.id.list_teacher)
         arrayAdapter = ArrayAdapter(
             applicationContext,
             android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.homework_item)
+            resources.getStringArray(R.array.class_teacher)
         )
 
         listView?.adapter = arrayAdapter
 
-        list_homework.setOnItemClickListener { parent: AdapterView<*>, view: View, position:Int, id:Long ->
+        list_teacher.setOnItemClickListener { parent: AdapterView<*>, view: View, position:Int, id:Long ->
 
-            val toHomeworkSubmission = Intent(this, HomeworkSubmission::class.java)
-            startActivity(toHomeworkSubmission)
+            val toHomeworkTeacher = Intent(this, HomeworkTeacher::class.java)
+            startActivity(toHomeworkTeacher)
 
-        }*/
+        }
 
-        var database = FirebaseDatabase.getInstance().reference.child("Course")
+        /*var database = FirebaseDatabase.getInstance().reference.child("Course")
 
         var getData = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 var sb = StringBuilder()
                 for(i in snapshot.children) {
 
-                    var homework = i.child("homework").getValue()
+                    //var homework = i.child("homework").getValue()
 
                     //sb.append("${i.key} $subject\n ")
-                    sb.append("$homework\n____________________________________\n")
+                    sb.append("${i.key}\n____________________________________\n")
                 }
-                homework.setText(sb)
+                list_class_teacher.setText(sb)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -66,11 +63,13 @@ class Homework : AppCompatActivity() {
         database.addValueEventListener(getData)
         database.addListenerForSingleValueEvent(getData)
 
-        homework.setOnClickListener() {
+        list_class_teacher.setOnClickListener {
 
-            val toHomeworkSubmission = Intent(this, HomeworkSubmission::class.java)
-            startActivity(toHomeworkSubmission)
+            val toHomeworkTeacher = Intent(this, HomeworkTeacher::class.java)
+            startActivity(toHomeworkTeacher)
 
-        }
+        }*/
     }
+
+
 }

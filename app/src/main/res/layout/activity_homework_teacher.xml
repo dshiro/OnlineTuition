@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".HomeworkTeacher">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_classroom"
@@ -13,40 +14,54 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="@drawable/abc_vector_test"
-        app:title="Submission"
+        app:title="Homework"
         app:titleTextColor="#FFFFFF"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp" />
 
     <TextView
-        android:id="@+id/submission"
+        android:id="@+id/homework_teacher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="200dp"
+
+        android:layout_marginTop="60dp"
+
+        android:layout_marginBottom="20dp"
+
         android:paddingStart="@dimen/text_padding"
         android:paddingEnd="@dimen/text_padding"
-        android:text="Practical 1"
+        android:text=""
         android:textColor="#000000"
         android:textSize="@dimen/multiple_text_size" />
 
-    <Button
-        android:id="@+id/btnAddAttachment"
+    <EditText
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="false"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:hint="homework"
+        android:ems="10"
+        android:inputType="textPersonName"
         android:layout_marginTop="500dp"
-        android:text="add attachment" />
-    <Button
-        android:id="@+id/btnSubmit"
+         />
+
+    <EditText
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="600dp"
-        android:text="submit" />
+        android:layout_marginLeft="50dp"
+        android:hint="title"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="550dp"/>
 
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:layout_marginTop="525dp"
+        android:layout_marginLeft="285dp"/>
 
 
 </RelativeLayout>
