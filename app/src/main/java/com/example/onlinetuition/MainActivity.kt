@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity() {
         val buttonRating = findViewById<Button>(R.id.btnRating)
         buttonRating.setOnClickListener{
             val toRating = Intent(this, student_rating::class.java)
+            val loginID = intent.getStringExtra("LoginID")
+            toRating.putExtra("LoginID", loginID)
             startActivity(toRating)
         }
     }
