@@ -20,8 +20,8 @@ class student_rating : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_rating)
 
-        userid = "fe26WUbXAFXw9NiDbzacWGHXEea2"
-        //userid = intent.getStringExtra("LoginID").toString()
+        //userid = "fe26WUbXAFXw9NiDbzacWGHXEea2"
+        userid = intent.getStringExtra("LoginID").toString()
 
         if (userid == "null") {
             Toast.makeText(applicationContext , "Unable to rate - no user ID found.", Toast.LENGTH_LONG).show()
