@@ -83,9 +83,9 @@ class CourseSelect : AppCompatActivity() {
         val size = checked.size()
         val totalPrice = size * 50
 
-
         val toPayment = Intent(this, BankIn::class.java)
-        toPayment.putExtra("Total_Price", totalPrice.toString().toInt())
+      
+        toPayment.putExtra("Total Price", totalPrice.toString().toInt())
         startActivity(toPayment)
     }*/
 
