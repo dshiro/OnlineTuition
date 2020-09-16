@@ -74,7 +74,7 @@ class CourseSelect : AppCompatActivity() {
         val ref = FirebaseDatabase.getInstance().getReference("User").child("Student").child(userID)
         /*val course = Course(valuetoadd)*/
 
-        ref.push().setValue("course: $valuetoadd")
+        ref.child("course").setValue(valuetoadd)
 
     }
 
