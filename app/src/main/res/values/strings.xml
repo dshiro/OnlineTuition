@@ -44,7 +44,7 @@
         <item>IT </item>
     </string-array>
 
-    <string-array name="class_item">
+    <string-array name="class_teacher">
         <item>Accounting</item>
         <item>Business</item>
         <item>Multimedia</item>

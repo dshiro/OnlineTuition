@@ -34,6 +34,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(toClass)
         }
 
+        val buttonClassroomTeacher = findViewById<Button>(R.id.button_classroom_teacher)
+        buttonClassroomTeacher.setOnClickListener{
+            val toClassTeacher = Intent(this, ClassTeacher::class.java)
+            startActivity(toClassTeacher)
+        }
+
         val buttonRating = findViewById<Button>(R.id.btnRating)
         buttonRating.setOnClickListener{
             val toRating = Intent(this, student_rating::class.java)

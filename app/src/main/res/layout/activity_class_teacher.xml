@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Homework">
+    tools:context=".ClassTeacher">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_classroom"
@@ -14,24 +14,16 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="@drawable/abc_vector_test"
-        app:title="Homework"
+        app:title="Classroom(teacher)"
         app:titleTextColor="#FFFFFF"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp" />
 
-    <TextView
-        android:id="@+id/homework"
+    <ListView
+        android:id="@+id/list_teacher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp" />
 
-        android:layout_marginTop="60dp"
-
-        android:layout_marginBottom="20dp"
-
-        android:paddingStart="@dimen/text_padding"
-        android:paddingEnd="@dimen/text_padding"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="@dimen/multiple_text_size" />
 
 </RelativeLayout>
