@@ -54,12 +54,12 @@ class Login : AppCompatActivity() {
     }
 
     private fun loginUser(email: String, password: String) {
-        val loginID: String = mAuth.currentUser!!.uid
 
 
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {task ->
                 if (task.isSuccessful){
+                    val loginID: String = mAuth.currentUser!!.uid
                     val toHome = Intent(this, MainActivity::class.java)
                     toHome.putExtra("LoginID", loginID)
                     startActivity(toHome)
