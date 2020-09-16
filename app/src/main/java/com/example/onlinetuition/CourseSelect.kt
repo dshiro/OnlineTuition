@@ -22,7 +22,7 @@ class CourseSelect : AppCompatActivity() {
     lateinit var listView: ListView
     private var arrayAdapter: ArrayAdapter<String>? = null
     var courseList = ArrayList<String>()
-    /*val userID = intent.getStringExtra()*/
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +31,12 @@ class CourseSelect : AppCompatActivity() {
         supportActionBar?.title = "Select Course (Multiple)"
 
 
-
-
         listView = findViewById(R.id.list_view)
         arrayAdapter = object: ArrayAdapter<String>(applicationContext, android.R.layout.simple_list_item_multiple_choice, resources.getStringArray(R.array.subject_item)){
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
                 val view = super.getView(position, convertView, parent)
                 if (position %2 == 0){
-                    view.setBackgroundColor(Color.parseColor("#00FFFF"))
+                    view.setBackgroundColor(Color.parseColor("#93766c"))
                 }else{
                     view.setBackgroundColor(Color.WHITE)
                 }
@@ -55,9 +53,6 @@ class CourseSelect : AppCompatActivity() {
            /* passTotalPrice()*/
             saveCourse()
 
-
-
-
         }
 
 
@@ -71,19 +66,15 @@ class CourseSelect : AppCompatActivity() {
                 courseList.add(clickedText)
             }
         }
-
     }
 
 /*    private fun saveCourse() {
         val valuetoadd = courseList.distinct().joinToString(separator = ",")
-        val ref = FirebaseDatabase.getInstance().getReference("User").child("Student")
-        val course = Course(valuetoadd)
+        val userID = intent.getStringExtra("LoginID").toString()
+        val ref = FirebaseDatabase.getInstance().getReference("User").child("Student").child(userID)
+        /*val course = Course(valuetoadd)*/
 
-        ref.push().setValue(course)
-
-
-
-
+        ref.push().setValue("course: $valuetoadd")
 
     }
 
