@@ -50,7 +50,7 @@ class tabStudent : Fragment() {
                 var arrRace = ArrayList<String>()
 
                 for (postSnapshot in dataSnapshot.children) {
-                    Log.println(Log.INFO, "debug_race", postSnapshot.toString())
+                    //Log.println(Log.INFO, "debug_race", postSnapshot.toString())
                     arrRace.add(postSnapshot.child("race").value.toString())
                 }
 
