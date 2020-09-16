@@ -48,7 +48,7 @@ class tabRating : Fragment() {
                 var arrRating = ArrayList<String>()
 
                 for (postSnapshot in dataSnapshot.children) {
-                    Log.println(Log.INFO, "debug_rating", postSnapshot.toString())
+                    //Log.println(Log.INFO, "debug_rating", postSnapshot.toString())
                     arrRating.add(postSnapshot.child("rating").value.toString())
                 }
 

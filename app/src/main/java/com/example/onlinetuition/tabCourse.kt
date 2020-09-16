@@ -47,15 +47,21 @@ class tabCourse : Fragment() {
                 var arrCourse = ArrayList<String>()
 
                 for (postSnapshot in dataSnapshot.children) {
-                    Log.println(Log.INFO, "debug_course", postSnapshot.toString())
+                    //Log.println(Log.INFO, "debug_course", postSnapshot.toString())
                     val courselist = postSnapshot.child("course").value.toString().split(",")
                     for (course in courselist)
                     {
-                        arrCourse.add(course)
+                        //Log.i("course: ", course)
+                        if (course != "null"){ arrCourse.add(course)}
                     }
                 }
 
                 val total:Double = arrCourse.count().toDouble()
+
+//                for (i in 0 until arrCourse.size) {
+//                    Log.i("courselist: ", arrCourse.get(i))
+//                }
+
                 val courseIT = arrCourse.count {it == "IT"}
                 val courseAccount = arrCourse.count {it == "Account"}
                 val courseBusiness = arrCourse.count {it == "Business"}
